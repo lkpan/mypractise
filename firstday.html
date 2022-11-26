@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firstDayCode</title>
+    <style>
+        body{
+        margin: 0;
+        padding: 0;
+        }
+
+        /* 內减模式 */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* 设置网页统一的字体大小、行高、字体系列相关属性 */
+        body {
+        font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+            "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+        color: #333;
+        }
+
+        .container {
+            display: flex;
+            margin: 10vw;
+        }
+
+        .pic {
+            flex: 0.2;
+            text-align: center;
+            border-radius: 20%;
+            height: 80vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 1s;
+            font-size: 2vw;
+        }
+        .pic:not(:last-child) {
+            margin-right: 2vw;
+        }
+        .active {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="pic active" style="background-image: url('https://cdn.yemek.com/mnresize/940/940/uploads/2015/09/humus-guncelleme-sunum-2.jpg')">FOOD</span>
+        <span class="pic" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F0%2F57b159759bf7d.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671984843&t=568a3385c14d141a7af426fa84614495')">FOOD</span>
+        <span class="pic" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F0%2F57b56b519ab4e.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671984843&t=2bcee084397bc65a62fa8ab5d4695700')">FOOD</span>
+        <span class="pic" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Flmg.jj20.com%2Fup%2Fallimg%2F811%2F0HQ4104127%2F140HQ04127-5-1200.jpg&refer=http%3A%2F%2Flmg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671984843&t=38ee8da12cdb65983b89e91ecf33d0b1')">FOOD</span>
+    </div>
+    <script>
+        let pics = document.querySelectorAll('.pic')
+        pics.forEach(element => {
+            element.addEventListener('click', function() {
+                removeActive()
+                element.classList.add('active')
+            })
+        })
+        function removeActive() {
+            pics.forEach(element => {
+                element.className = 'pic'
+            })
+        }
+    </script>
+</body>
+</html>
